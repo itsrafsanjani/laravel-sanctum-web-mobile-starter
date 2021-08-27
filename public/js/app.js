@@ -37580,7 +37580,31 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _vm._m(0)
+  return _c(
+    "nav",
+    { staticClass: "navbar navbar-expand-md navbar-light bg-white shadow-sm" },
+    [
+      _c(
+        "div",
+        { staticClass: "container" },
+        [
+          _c(
+            "router-link",
+            {
+              staticClass: "navbar-brand",
+              attrs: { to: { name: "dashboard" } }
+            },
+            [_vm._v("\n                Laravel\n            ")]
+          ),
+          _vm._v(" "),
+          _vm._m(0),
+          _vm._v(" "),
+          _vm._m(1)
+        ],
+        1
+      )
+    ]
+  )
 }
 var staticRenderFns = [
   function() {
@@ -37588,93 +37612,83 @@ var staticRenderFns = [
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
     return _c(
-      "nav",
+      "button",
       {
-        staticClass: "navbar navbar-expand-md navbar-light bg-white shadow-sm"
+        staticClass: "navbar-toggler",
+        attrs: {
+          type: "button",
+          "data-toggle": "collapse",
+          "data-target": "#navbarSupportedContent",
+          "aria-controls": "navbarSupportedContent",
+          "aria-expanded": "false",
+          "aria-label": "Toggle navigation"
+        }
+      },
+      [_c("span", { staticClass: "navbar-toggler-icon" })]
+    )
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c(
+      "div",
+      {
+        staticClass: "collapse navbar-collapse",
+        attrs: { id: "navbarSupportedContent" }
       },
       [
-        _c("div", { staticClass: "container" }, [
-          _c("a", { staticClass: "navbar-brand", attrs: { href: "/" } }, [
-            _vm._v("\n                Laravel\n            ")
-          ]),
-          _vm._v(" "),
-          _c(
-            "button",
-            {
-              staticClass: "navbar-toggler",
-              attrs: {
-                type: "button",
-                "data-toggle": "collapse",
-                "data-target": "#navbarSupportedContent",
-                "aria-controls": "navbarSupportedContent",
-                "aria-expanded": "false",
-                "aria-label": "Toggle navigation"
-              }
-            },
-            [_c("span", { staticClass: "navbar-toggler-icon" })]
-          ),
-          _vm._v(" "),
-          _c(
-            "div",
-            {
-              staticClass: "collapse navbar-collapse",
-              attrs: { id: "navbarSupportedContent" }
-            },
-            [
-              _c("ul", { staticClass: "navbar-nav mr-auto" }),
-              _vm._v(" "),
-              _c("ul", { staticClass: "navbar-nav ml-auto" }, [
-                _c("li", { staticClass: "nav-item dropdown" }, [
-                  _c(
-                    "a",
-                    {
-                      pre: true,
-                      attrs: {
-                        id: "navbarDropdown",
-                        class: "nav-link dropdown-toggle",
-                        href: "#",
-                        role: "button",
-                        "data-toggle": "dropdown",
-                        "aria-haspopup": "true",
-                        "aria-expanded": "false"
-                      }
-                    },
-                    [
-                      _vm._v(
-                        "\n                            username\n                        "
-                      )
-                    ]
-                  ),
-                  _vm._v(" "),
-                  _c(
-                    "div",
-                    {
-                      staticClass: "dropdown-menu dropdown-menu-right",
-                      attrs: { "aria-labelledby": "navbarDropdown" }
-                    },
-                    [
-                      _c(
-                        "a",
-                        {
-                          staticClass: "dropdown-item",
-                          attrs: {
-                            href: "/logout",
-                            onclick:
-                              "event.preventDefault();\n                               document.getElementById('logout-form').submit();"
-                          }
-                        },
-                        [
-                          _vm._v(
-                            "\n                                Logout\n                            "
-                          )
-                        ]
-                      )
-                    ]
-                  )
-                ])
-              ])
-            ]
-          )
+        _c("ul", { staticClass: "navbar-nav mr-auto" }),
+        _vm._v(" "),
+        _c("ul", { staticClass: "navbar-nav ml-auto" }, [
+          _c("li", { staticClass: "nav-item dropdown" }, [
+            _c(
+              "a",
+              {
+                pre: true,
+                attrs: {
+                  id: "navbarDropdown",
+                  class: "nav-link dropdown-toggle",
+                  href: "#",
+                  role: "button",
+                  "data-toggle": "dropdown",
+                  "aria-haspopup": "true",
+                  "aria-expanded": "false"
+                }
+              },
+              [
+                _vm._v(
+                  "\n                            username\n                        "
+                )
+              ]
+            ),
+            _vm._v(" "),
+            _c(
+              "div",
+              {
+                staticClass: "dropdown-menu dropdown-menu-right",
+                attrs: { "aria-labelledby": "navbarDropdown" }
+              },
+              [
+                _c(
+                  "a",
+                  {
+                    staticClass: "dropdown-item",
+                    attrs: {
+                      href: "/logout",
+                      onclick:
+                        "event.preventDefault();\n                               document.getElementById('logout-form').submit();"
+                    }
+                  },
+                  [
+                    _vm._v(
+                      "\n                                Logout\n                            "
+                    )
+                  ]
+                )
+              ]
+            )
+          ])
         ])
       ]
     )
