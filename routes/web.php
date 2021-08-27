@@ -14,12 +14,10 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
-
 Auth::routes();
 
-Route::get('/dashboard', [HomeController::class, 'index'])->name('dashboard');
+Route::get('/', [HomeController::class, 'index'])->name('home');
+
+Route::get('/dashboard', [HomeController::class, 'dashboard'])->name('dashboard');
 
 Route::get('{path}', [HomeController::class, 'index'])->where('path', '([A-z\/_.\d-]+)?');

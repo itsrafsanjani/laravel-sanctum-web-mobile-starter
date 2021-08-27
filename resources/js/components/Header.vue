@@ -1,7 +1,7 @@
 <template>
     <nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm">
         <div class="container">
-            <router-link :to="{ name: 'dashboard' }" class="navbar-brand">
+            <router-link :to="{ name: 'welcome' }" class="navbar-brand">
                 Laravel
             </router-link>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
@@ -18,22 +18,20 @@
                 <!-- Right Side Of Navbar -->
                 <ul class="navbar-nav ml-auto">
                     <!-- Authentication Links -->
-<!--                    <li class="nav-item">-->
-<!--                        <a class="nav-link" href="/login">Login</a>-->
-<!--                    </li>-->
-<!--                    <li class="nav-item">-->
-<!--                        <a class="nav-link" href="/register">Register</a>-->
-<!--                    </li>-->
+                    <li class="nav-item">
+                        <router-link class="nav-link" :to="{ name: 'dashboard' }">Dashboard</router-link>
+                    </li>
+                    <li class="nav-item">
+                        <router-link class="nav-link" :to="{ name: 'about' }">About</router-link>
+                    </li>
                     <li class="nav-item dropdown">
                         <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button"
                            data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
-                            username
+                            Username
                         </a>
 
                         <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
-                            <a class="dropdown-item" href="/logout"
-                               onclick="event.preventDefault();
-                               document.getElementById('logout-form').submit();">
+                            <a class="dropdown-item" href="#" @click="logout">
                                 Logout
                             </a>
                         </div>
@@ -46,7 +44,19 @@
 
 <script>
 export default {
-    name: "Header"
+    name: "Header",
+
+    methods: {
+        logout() {
+            axios.post('logout').then(response => {
+                console.log(response);
+                this.$router.push({ name: 'welcome' })
+            })
+            .catch(error => {
+                console.log(error);
+            });
+        }
+    }
 }
 </script>
 
